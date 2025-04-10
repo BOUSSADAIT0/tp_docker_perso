@@ -20,6 +20,30 @@ Les images sont disponibles sur Docker Hub :
 
 ![Aperçu de l'application](capture_test.png)
 
+## Téléchargement des images Docker
+
+Pour télécharger les images Docker sur votre ordinateur local, utilisez les commandes suivantes :
+
+```bash
+# Télécharger l'image du backend
+docker pull boussad1ait/quotes_backend:v2
+
+# Télécharger l'image du frontend
+docker pull boussad1ait/quotes_frontend:v2
+
+# Vérifier que les images ont bien été téléchargées
+docker images | grep boussad1ait
+
+## Après le téléchargement des images
+
+Après avoir téléchargé les images Docker, vous pouvez facilement déployer l'application complète avec Docker Compose que j'ai partager 
+
+Ouvrez un terminal et naviguez vers le dossier contenant votre fichier docker-compose.yml
+Exécutez la commande suivante pour démarrer les deux services :
+```bash
+bashdocker-compose up -d
+```
+
 
 
 ## Déploiement rapide

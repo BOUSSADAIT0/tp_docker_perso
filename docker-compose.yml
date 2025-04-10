@@ -1,9 +1,7 @@
 version: '3'
 services:
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: boussad1ait/quotes_backend:v2
     ports:
       - "5000:5000"
     container_name: quotes-backend
@@ -12,9 +10,7 @@ services:
       - quotes-app-network
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: boussad1ait/quotes_frontend:v2
     ports:
       - "3000:3000"
     container_name: quotes-frontend
@@ -23,12 +19,6 @@ services:
       - backend
     environment:
       - REACT_APP_API_URL=http://backend:5000
-    # Cette configuration est nécessaire pour que React puisse recevoir les mises à jour du code 
-    # en mode développement à l'intérieur du conteneur Docker
-    stdin_open: true
-    volumes:
-      - ./frontend:/usr/src/app
-      - /usr/src/app/node_modules
     networks:
       - quotes-app-network
 
