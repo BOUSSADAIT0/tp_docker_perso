@@ -81,9 +81,9 @@ projet/
 └── docker-compose.yml
 ```
 
-### Construction des images
+### Les commandes que jai fait pour construction des images
 
-Si vous souhaitez construire les images localement :
+construire les images localement :
 
 ```bash
 # Backend
