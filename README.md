@@ -27,13 +27,15 @@ Pour télécharger les images Docker sur votre ordinateur local, utilisez les co
 ```bash
 # Télécharger l'image du backend
 docker pull boussad1ait/quotes_backend:v2
-
+```
+```bash
 # Télécharger l'image du frontend
 docker pull boussad1ait/quotes_frontend:v2
-
+```
+```bash
 # Vérifier que les images ont bien été téléchargées
 docker images | grep boussad1ait
-
+```
 ## Après le téléchargement des images
 
 Après avoir téléchargé les images Docker, vous pouvez facilement déployer l'application complète avec Docker Compose que j'ai partager 
@@ -44,47 +46,6 @@ Exécutez la commande suivante pour démarrer les deux services :
 bashdocker-compose up -d
 ```
 
-
-
-## Déploiement rapide
-
-Pour déployer rapidement l'application, utilisez le fichier docker-compose.yml :
-
-```yaml
-version: '3'
-services:
-  backend:
-    image: boussad1ait/quotes_backend:v2
-    ports:
-      - "5000:5000"
-    container_name: quotes-backend
-    restart: unless-stopped
-    networks:
-      - quotes-app-network
-
-  frontend:
-    image: boussad1ait/quotes_frontend:v2
-    ports:
-      - "3000:3000"
-    container_name: quotes-frontend
-    restart: unless-stopped
-    depends_on:
-      - backend
-    environment:
-      - REACT_APP_API_URL=http://backend:5000
-    networks:
-      - quotes-app-network
-
-networks:
-  quotes-app-network:
-    driver: bridge
-```
-
-Copier ce contenu dans un fichier `docker-compose.yml` et exécuter :
-
-```bash
-docker-compose up -d
-```
 
 ## Accès à l'application
 
