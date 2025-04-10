@@ -36,15 +36,6 @@ docker pull boussad1ait/quotes_frontend:v2
 # Vérifier que les images ont bien été téléchargées
 docker images | grep boussad1ait
 ```
-## Après le téléchargement des images
-
-Après avoir téléchargé les images Docker, vous pouvez facilement déployer l'application complète avec Docker Compose que j'ai partager 
-
-Ouvrez un terminal et naviguez vers le dossier contenant votre fichier docker-compose.yml
-Exécutez la commande suivante pour démarrer les deux services :
-```bash
-bashdocker-compose up -d
-```
 
 
 ## Accès à l'application
